@@ -8,7 +8,11 @@ public class Enemy : MonoBehaviour
     [SerializeField] private int _maxHealth = 100;
 
     [SerializeField] private Bar _healthBar;
-
+    public void DealDamage(int damage)
+    {
+        _health = Mathf.Max(0, _health - damage);
+        UpdateHealthBar();
+    }
     public void Heal()
     {
         int heal = Random.Range(20,30);

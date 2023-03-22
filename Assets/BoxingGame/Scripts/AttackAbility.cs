@@ -9,8 +9,9 @@ public class AttackAbility : PlayerAbility
 		if(_turnTimer.IsNextTurn())
 		{
 			int damage = Random.Range(20, 30);
-			Debug.Log("ATTACK " + damage);
+			_enemy.DealDamage(damage);
 			EndTurn();
 		}
+			
 	}
 }
